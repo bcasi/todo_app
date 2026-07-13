@@ -16,8 +16,8 @@ input[type="checkbox"] {
 
 /* Checked state */
 input[type="checkbox"]:checked {
-  background-color: #4caf50; /* green fill */
-  border-color: #4caf50;
+  background-color: #4c5baf; /* green fill */
+  border-color: #4c5baf;
 }
 
 /* Optional: add a checkmark */
