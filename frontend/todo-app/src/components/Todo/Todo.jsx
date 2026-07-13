@@ -1,5 +1,5 @@
 import "./Todo.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function Todo({ todo, setTodo }) {
   async function getTodo() {
@@ -13,14 +13,19 @@ function Todo({ todo, setTodo }) {
     }
   }
 
-  async function updateTodo(id) {
+  async function updateTodo(id, isCompleted) {
+    setTodo((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, isCompleted: !item.isCompleted } : item,
+      ),
+    );
     try {
       const response = await fetch("http://localhost:3000/updateTodo", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ id, isCompleted: true }),
+        body: JSON.stringify({ id, isCompleted: !isCompleted }),
       });
       const data = await response.json();
       console.log(data);
@@ -42,10 +47,10 @@ function Todo({ todo, setTodo }) {
       {todo.map((item) => (
         <div className="todoItem">
           <input
-            onChange={() => updateTodo(item.id)}
+            onChange={() => updateTodo(item.id, item.isCompleted)}
             checked={item.isCompleted}
             type="checkbox"
-            class="completed"
+            className="completed"
           />
           <div>{item.title}</div>
           <div>{item.description}</div>
