@@ -1,0 +1,42 @@
+.popup {
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  top: 20%;
+  left: 40%;
+  height: 50%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.3)
+  );
+  border-radius: 15px;
+}
+
+.title {
+  width: 80%;
+  height: 50px;
+  border-radius: 5px;
+}
+.description {
+  width: 80%;
+  height: 90px;
+  border-radius: 5px;
+}
+
+.title-container {
+  margin: 15px 15px;
+}
+
+.save {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.close {
+  margin: 15px 75px;
+  margin-left: 90%;
+  cursor: pointer;
+}

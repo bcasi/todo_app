@@ -1,0 +1,60 @@
+input[type="checkbox"] {
+  /* Remove default checkbox style */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Custom size and shape */
+  width: 20px;
+  height: 20px;
+  border: 2px solid #555;
+  border-radius: 50%; /* makes it round */
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+/* Checked state */
+input[type="checkbox"]:checked {
+  background-color: #4caf50; /* green fill */
+  border-color: #4caf50;
+}
+
+/* Optional: add a checkmark */
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 15px;
+  justify-content: space-between;
+  /* width: 350px; */
+  height: 150px;
+  /* background: linear-gradient(to right, #000000, #333333); */
+}
+
+.todoItem {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.3)
+  );
+
+  /* border-radius: 5%; */
+  padding: 15px 15px;
+  margin-bottom: 5px;
+}
